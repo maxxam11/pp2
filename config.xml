@@ -80,8 +80,8 @@
     <!--<access origin="mailto:*" launch-external="yes" />-->
     
     <gap:plugin name='org.crosswalk.engine' version='1.3.0' source='pgb' />
-    <gap:plugin name="org.apache.cordova.inappbrowser" version="1.0.1" />
-    <gap:plugin name="org.apache.cordova.splashscreen" version="2.1.0" />
+    <!--<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />-->
+    <gap:plugin name="br.com.paveisitemas.splashscreen" version="2.1.1" />
     
     <!-- заставка -->
     <!--
