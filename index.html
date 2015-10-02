@@ -51,9 +51,16 @@
         </script>
     </head>
     <body>
-        <div class="content-error" style="display: none;">
-            Потеряна связь с сервером. <br>
-            Возможно нет соединения с интернетом. <br>
+        <style>
+            .content-error { font-family: Arial, Helvetica, sans-serif; font-size: 15px; display: none; padding: 100px 30px; color: grey; text-align: center; }
+            .content-error div { margin-bottom: 50px; }
+            .content-error_button { text-transform: uppercase; color: #00BCD4; }
+        </style>
+        <div class="content-error">
+            <div>
+                Потеряна связь с сервером. <br>
+                Возможно нет соединения с интернетом.<br>
+            </div>
             <span class="content-error_button" onclick="start();">Поробовать еще раз</span>
         </div>
     </body>

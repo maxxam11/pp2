@@ -28,7 +28,7 @@
     </description>
     
     <!-- цвет фона по умолчанию -->
-    <!--<preference name="BackgroundColor" value="0xffffffff"/>-->
+    <preference name="BackgroundColor" value="0xffffffff"/>
     
     
 
