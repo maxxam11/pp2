@@ -16,32 +16,45 @@
         <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
         <script>
             
+            function start() {
+                $('.content-error').hide();
+                if (!navigator.onLine) {
+                    $('.error').show();
+                     
+               } else {
 
-            $(document).ready(function(){
-                
-                $.ajax({
-            		url: 'http://pp.holme.ru:8080/',
-            		method: 'get',
-            		dataType: 'html',
-                	beforeSend: function(){
-                	    
-                	},
-                })
-                .done(function(data, textStatus, jqXHR){
-                    $('body').html(data);
-                })
-                .fail(function( jqXHR, textStatus, errorThrown ) {
-                	
-                }).always(function(){
-                    
-                });
-                
-                
-            });
+                    $.ajax({
+                        url: 'http://pp.holme.ru/start',
+                        method: 'post',
+                        dataType: 'html',
+                        timeout: 4000, 
+                        cache: false,
+                    })
+                    .done(function(data, textStatus, jqXHR){
+
+                        if (data) {
+                            document.location.href = 'http://pp.holme.ru/';
+                        } else {
+                            $('.content-error').show();
+                            
+                        }
+                    })
+                    .fail(function( jqXHR, textStatus, errorThrown ) {
+
+                        $('.content-error').show();
+
+                    });
+                }
+            }
+            start();
             
         </script>
     </head>
     <body>
-        <div style="width: 100px;height:100px;background-color: red;margin: auto auto;">загрузка...</div>
+        <div class="content-error" style="display: none;">
+            Потеряна связь с сервером. <br>
+            Возможно нет соединения с интернетом. <br>
+            <span onclick="start();">Поробовать еще раз</span>
+        </div>
     </body>
 </html>
