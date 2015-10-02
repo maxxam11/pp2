@@ -15,14 +15,16 @@
         <!--<script src="cordova.js" type="text/javascript"></script>-->
         <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
         <script>
+            function showError() {
+                $('.content-error').show();
+                $('.logo').hide();
+            }
             
             function start() {
                 $('.content-error').hide();
                 if (!navigator.onLine) {
-                    $('.error').show();
-                     
-               } else {
-
+                    showError();                     
+                } else {
                     $.ajax({
                         url: 'http://pp.holme.ru/start',
                         method: 'get',
@@ -31,18 +33,14 @@
                         cache: false,
                     })
                     .done(function(data, textStatus, jqXHR){
-
                         if (data) {
                             document.location.href = 'http://pp.holme.ru/';
                         } else {
-                            $('.content-error').show();
-                            
+                            showError();                            
                         }
                     })
                     .fail(function( jqXHR, textStatus, errorThrown ) {
-
-                        $('.content-error').show();
-
+                        showError();
                     });
                 }
             }
@@ -52,9 +50,11 @@
     </head>
     <body>
         <style>
-            .content-error { font-family: Arial, Helvetica, sans-serif; font-size: 15px; display: none; padding: 100px 30px; color: grey; text-align: center; }
+            body, * { font-family: Arial, Helvetica, sans-serif; }
+            .content-error { font-size: 15px; display: none; padding: 100px 30px; color: grey; text-align: center; }
             .content-error div { margin-bottom: 50px; }
             .content-error_button { text-transform: uppercase; color: #00BCD4; }
+            .logo { text-transform: uppercase; color: #00BCD4; padding-top: 150px; text-align: center; }
         </style>
         <div class="content-error">
             <div>
@@ -63,5 +63,6 @@
             </div>
             <span class="content-error_button" onclick="start();">Поробовать еще раз</span>
         </div>
+        <div class="logo">Павшинская пойма</div>
     </body>
 </html>
