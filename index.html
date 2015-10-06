@@ -16,11 +16,13 @@
         <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
         <script>
             function showError() {
-                $('.content-error').show();
+                $('.js_error').show();
+                $('.js_loading').hide();
             }
             
             function start() {
-                $('.content-error').hide();
+                $('.js_error').hide();
+                $('.js_loading').show();
                 if (!navigator.onLine) {
                     showError();                     
                 } else {
@@ -33,8 +35,9 @@
                     })
                     .done(function(data, textStatus, jqXHR){
                         if (data) {
-                            //document.location.href = 'http://pp.holme.ru/';
-                            $('body').html(data);
+                            //document.location.href = 'http://pp.holme.ru/';                            
+                            var body = $(data).find('.js_layout_body').html();
+                            $('body').html(body);
                         } else {
                             showError();                            
                         }
@@ -44,24 +47,35 @@
                     });
                 }
             }
-            start();
             
         </script>
     </head>
-    <body>
+    <body onload="start();">
         <style>
             body, * { font-family: Arial, Helvetica, sans-serif; }
-            .content-error { font-size: 15px; display: none; padding: 100px 15px; color: grey; text-align: center; }
-            .content-error div { margin-bottom: 50px; }
+            /*.content-error { font-size: 15px; display: none; padding: 100px 15px; color: grey; text-align: center; }*/
+            .content-error { 
+                font-size: 15px; 
+                color: grey; 
+                text-align: center; 
+                position: absolute; 
+                top: 0; left: 0; right: 0; bottom: 0;
+                margin: auto;
+            }
+            .content-error div { margin-bottom: 25px; }
             .content-error_button { text-transform: uppercase; color: #00BCD4; }
             .logo { text-transform: uppercase; color: #00BCD4; padding-top: 150px; text-align: center; }
         </style>
-        <div class="content-error">
+        <div class="content-error js_error" style="display: none; height: 200px;">
             <div>
                 Не могу соединиться с сервером. <br>
                 Возможно нет соединения с интернетом.<br>
             </div>
             <span class="content-error_button" onclick="start();">Попробовать еще раз</span>
+        </div>
+        
+        <div class="content-error js_loading" style="height: 20px;">            
+            <span class="content-error_button">Павшинская пойма</span>
         </div>
     </body>
 </html>
