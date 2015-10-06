@@ -20,12 +20,12 @@
                 $('.js_loading').hide();
             }
             
-            function start() {
+            function start() { 
                 $('.js_error').hide();
                 $('.js_loading').show();
-                if (!navigator.onLine) {
+                if (!navigator.onLine) { 
                     showError();                     
-                } else {
+                } else { 
                     $.ajax({
                         url: 'http://pp.holme.ru/start',
                         method: 'get',
@@ -33,11 +33,9 @@
                         timeout: 4000, 
                         cache: false,
                     })
-                    .done(function(data, textStatus, jqXHR){
-                        if (data) {
-                            //document.location.href = 'http://pp.holme.ru/';                            
-                            var body = $(data).find('.js_layout_body').html();
-                            $('body').html(body);
+                    .done(function(data, textStatus, jqXHR){ 
+                        if (data) {                             
+                            $('body').html(data);
                         } else {
                             showError();                            
                         }
@@ -48,9 +46,11 @@
                 }
             }
             
+            start();
+            
         </script>
     </head>
-    <body onload="start();">
+    <body>
         <style>
             body, * { font-family: Arial, Helvetica, sans-serif; }
             /*.content-error { font-size: 15px; display: none; padding: 100px 15px; color: grey; text-align: center; }*/
@@ -66,7 +66,7 @@
             .content-error_button { text-transform: uppercase; color: #00BCD4; }
             .logo { text-transform: uppercase; color: #00BCD4; padding-top: 150px; text-align: center; }
         </style>
-        <div class="content-error js_error" style="display: none; height: 200px;">
+        <div class="content-error js_error" style="display: none; height: 150px;">
             <div>
                 Не могу соединиться с сервером. <br>
                 Возможно нет соединения с интернетом.<br>
@@ -74,7 +74,7 @@
             <span class="content-error_button" onclick="start();">Попробовать еще раз</span>
         </div>
         
-        <div class="content-error js_loading" style="height: 20px;">            
+        <div class="content-error js_loading" style="height: 50px; font-size: 17px;">            
             <span class="content-error_button">Павшинская пойма</span>
         </div>
     </body>
