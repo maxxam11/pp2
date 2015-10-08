@@ -33,14 +33,27 @@
         <script>
             var FROM_MOBILE = true;
             
+            var errorHtml = '<div class="content-error js_error" style="height: 150px;">'
+                            + '<div>Не могу соединиться с сервером.<br>Возможно нет соединения с интернетом.<br></div>'
+                            + '<span class="content-error_button" onclick="start();">Попробовать еще раз</span>'
+                            + '</div>';
+                    
+            var loadingHtml = '<div class="content-error js_loading" style="height: 50px; font-size: 17px;">'            
+                            + '<span class="content-error_button">Павшинская пойма</span></div>';
+                    
             function showError() {
-                $('.js_error').show();
-                $('.js_loading').hide();
+                if (localStorage && localStorage['layout']) {
+                    try { 
+                        $('body').html(localStorage['layout']); 
+                    } catch(e) {  }
+                } 
+                var $content = $('#content').length ? $('#content') : $('body');
+                $content.html(errorHtml);
             }
             
             function start() { 
-                $('.js_error').hide();
-                $('.js_loading').show();
+                $('body').html(loadingHtml);
+                
                 if (!navigator.onLine) { 
                     showError();                     
                 } else { 
@@ -54,7 +67,6 @@
                     .done(function(data, textStatus, jqXHR){ 
                         if (data) {                             
                             $('body').html(data);
-                            //document.location.href = 'http://pp.holme.ru/start';
                         } else {
                             showError();                            
                         }
@@ -74,16 +86,9 @@
     </head>
     <body>
         
-        <div class="content-error js_error" style="display: none; height: 150px;">
-            <div>
-                Не могу соединиться с сервером. <br>
-                Возможно нет соединения с интернетом.<br>
-            </div>
-            <span class="content-error_button" onclick="start();">Попробовать еще раз</span>
-        </div>
-        
-        <div class="content-error js_loading" style="height: 50px; font-size: 17px;">            
+        <div class="content-error js_loading" style="height: 50px; font-size: 17px;">
             <span class="content-error_button">Павшинская пойма</span>
-        </div>
+        </div>        
+        
     </body>
 </html>
