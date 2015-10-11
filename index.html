@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Павшинская пойма</title>
+        <title>Город Московский</title>
         
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=11" />
@@ -39,7 +39,7 @@
                             + '</div>';
                     
             var loadingHtml = '<div class="content-error js_loading" style="height: 50px; font-size: 17px;">'            
-                            + '<span class="content-error_button">Павшинская пойма</span></div>';
+                            + '<span class="content-error_button">Город Московский</span></div>';
                     
             function showError() {
                 if (localStorage && localStorage['layout']) {
@@ -58,7 +58,7 @@
                     showError();                     
                 } else { 
                     $.ajax({
-                        url: 'http://ppoima.ru/start?t34829a123b98d99c',
+                        url: 'http://townmos.ru/start?t34829a123b98d99c',
                         method: 'get',
                         dataType: 'html',
                         timeout: 4000, 
@@ -87,7 +87,7 @@
     <body>
         
         <div class="content-error js_loading" style="height: 50px; font-size: 17px;">
-            <span class="content-error_button">Павшинская пойма</span>
+            <span class="content-error_button">Город Московский</span>
         </div>        
         
     </body>
