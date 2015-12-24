@@ -88,8 +88,8 @@
     
     <!-- background service -->
     <!-- org.apache.cordova.device Dependencies de.appplant.cordova.plugin.background-mode -->
-    <plugin name="org.apache.cordova.device" spec="0.2.12" source="pgb" />
-    <plugin name="de.appplant.cordova.plugin.background-mode" spec="0.5.0" source="pgb" />
+    <plugin name="org.apache.cordova.device" spec="0.3.0" source="pgb" />
+    
     
     
     <!-- заставка -->
