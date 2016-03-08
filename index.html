@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Нижнекамск</title>
+        <title>Павшинская пойма</title>
         
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=11" />
@@ -11,6 +11,8 @@
         <!-- включаем режим мобильного прилождения, без навигационных панелей браузера в мобиле -->
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
+        
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
         
         <style>
             body, * { font-family: Arial, Helvetica, sans-serif; }
@@ -39,7 +41,7 @@
                             + '</div>';
                     
             var loadingHtml = '<div class="content-error js_loading" style="height: 50px; font-size: 17px;">'            
-                            + '<span class="content-error_button">Нижнекамск</span></div>';
+                            + '<span class="content-error_button">Павшинская пойма</span></div>';
                     
             function showError() {
                 if (localStorage && localStorage['layout']) {
@@ -58,7 +60,7 @@
                     showError();                     
                 } else { 
                     $.ajax({
-                        url: 'http://nk-116.ru/start?t34829a123b98d99c',
+                        url: 'http://pp.holme.ru/start?t34829a123b98d99c',
                         method: 'get',
                         dataType: 'html',
                         timeout: 4000, 
@@ -87,7 +89,7 @@
     <body>
         
         <div class="content-error js_loading" style="height: 50px; font-size: 17px;">
-            <span class="content-error_button">Нижнекамск</span>
+            <span class="content-error_button">Павшинская пойма</span>
         </div>        
         
     </body>
