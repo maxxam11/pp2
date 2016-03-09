@@ -8,11 +8,20 @@
         <!-- в мобиле включаем ширину сайта делаем шириной устройства -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
         <meta name="robots" content="all,follow" />
+        
+        <!-- включаем подсветку в мобильно хроме -->
+        <!-- Chrome, Firefox OS and Opera -->
+        <meta name="theme-color" content="#00BCD4">
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#00BCD4">
+        <!-- iOS Safari -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
         <!-- включаем режим мобильного прилождения, без навигационных панелей браузера в мобиле -->
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         
-        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+        <meta http-equiv="Content-Security-Policy" content="img-src * data:; default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; media-src *;">
         
         <style>
             body, * { font-family: Arial, Helvetica, sans-serif; }

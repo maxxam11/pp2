@@ -9,14 +9,18 @@
     <preference name='phonegap-version' value='cli-5.2.0' />
     
     <!-- версияя для этого пакета 1 19 (версия андройд 19 (4.4 KitKat)) 00 (размер экрана) 100 (версия приложения 1.0.0)-->
-    <!--<preference name="android-versionCode" value="11900100" />--> 
+    <!--
+    <preference name="android-versionCode" value="11900100" />
+    <preference name="android-minSdkVersion" value="19" />
+    --> 
+    <!-- минимальная версия анройд с учетом phonegap 5.2.0 только 4.1.1 -->
     <preference name="android-minSdkVersion" value="14" />
     <!--<preference name="android-targetSdkVersion" value="21" />--> 
     
     <!-- версия для старых платформ - версия андройд 10 (2.2 Froyo) --> 
     <!-- 
     <preference name="android-versionCode" value="11300100" /> 
-    <preference name="android-minSdkVersion" value="13" />
+    <preference name="android-minSdkVersion" value="10" />
     <preference name="android-maxSdkVersion" value="18" />
      -->
 
@@ -92,6 +96,7 @@
     <preference name="SplashMaintainAspectRatio" value="false" />
     -->
     
+    <plugin name="cordova-plugin-whitelist" spec="1" />
     <allow-navigation href="*"/>
     <allow-intent href="*"/>
     <access origin="*"/>
