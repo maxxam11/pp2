@@ -10,21 +10,17 @@
     
     <!-- версияя для этого пакета 1 19 (версия андройд 19 (4.4 KitKat)) 00 (размер экрана) 100 (версия приложения 1.0.0)-->
     <!--
-    <preference name="android-versionCode" value="11900100" />
+    <preference name="android-versionCode" value="11900110" />
     <preference name="android-minSdkVersion" value="19" />
-    --> 
-    <!-- минимальная версия анройд с учетом phonegap 5.2.0 только 4.1.1 -->
-    <preference name="android-minSdkVersion" value="14" />
-    <!--<preference name="android-targetSdkVersion" value="21" />--> 
+    -->     
     
-    <!-- версия для старых платформ - версия андройд 10 (2.2 Froyo) --> 
-    <!-- 
-    <preference name="android-versionCode" value="11300100" /> 
+    <!-- версия для старых платформ - версия андройд 10 (2.2 Froyo) -->     
+    <preference name="android-versionCode" value="11000110" /> 
     <preference name="android-minSdkVersion" value="10" />
-    <preference name="android-maxSdkVersion" value="18" />
-     -->
+    <!--<preference name="android-maxSdkVersion" value="18" />-->
+    
 
-    <name>ПП ТЕСТ</name>
+    <name>ПП ТЕСТ CW</name>
 
     <description>
         Павшинская пойма
@@ -83,8 +79,8 @@
     <!--<access origin="tel:*" launch-external="yes" />-->    
     <!-- чтобы можно было письмо отправить -->
     <!--<access origin="mailto:*" launch-external="yes" />-->
-    
-    <!--<gap:plugin name='org.crosswalk.engine' version='1.3.0' source='pgb' />-->
+    <!-- если включить crosswalk то обновление вылазиет нативное когда тянишь и все рушится -->
+    <gap:plugin name='org.crosswalk.engine' version='1.3.0' source='pgb' />
     <!--<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />-->
     <gap:plugin name="cordova-plugin-inappbrowser " version="1.0.1" />    
     <!--<gap:plugin name="br.com.paveisitemas.splashscreen" version="2.1.1" />-->

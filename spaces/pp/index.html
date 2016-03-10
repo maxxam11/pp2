@@ -8,9 +8,20 @@
         <!-- в мобиле включаем ширину сайта делаем шириной устройства -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
         <meta name="robots" content="all,follow" />
+        
+        <!-- включаем подсветку в мобильно хроме -->
+        <!-- Chrome, Firefox OS and Opera -->
+        <meta name="theme-color" content="#00BCD4">
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#00BCD4">
+        <!-- iOS Safari -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
         <!-- включаем режим мобильного прилождения, без навигационных панелей браузера в мобиле -->
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
+        
+        <meta http-equiv="Content-Security-Policy" content="default-src *; img-src * data:;  style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
         
         <style>
             body, * { font-family: Arial, Helvetica, sans-serif; }
@@ -35,13 +46,10 @@
             
             var errorHtml = '<div class="content-error js_error" style="height: 150px;">'
                             + '<div>Не могу соединиться с сервером.<br>Возможно нет соединения с интернетом.<br></div>'
-                            + '<span class="content-error_button" onclick="start();">Попробовать еще раз</span>'
-                            + '</div>';
+                            + '<span class="content-error_button" onclick="start_init();">Попробовать еще раз</span>'
+                            + '</div>'; 
                     
-            var loadingHtml = '<div class="content-error js_loading" style="height: 50px; font-size: 17px;">'            
-                            + '<span class="content-error_button">Павшинская пойма</span></div>';
-                    
-            function showError() {
+            function start_showError() {
                 if (localStorage && localStorage['layout']) {
                     try { 
                         $('body').html(localStorage['layout']); 
@@ -51,11 +59,10 @@
                 $content.html(errorHtml);
             }
             
-            function start() { 
-                $('body').html(loadingHtml);
+            function start_init() { 
                 
                 if (!navigator.onLine) { 
-                    showError();                     
+                    start_showError();                     
                 } else { 
                     $.ajax({
                         url: 'http://ppoima.ru/start?t34829a123b98d99c',
@@ -68,17 +75,17 @@
                         if (data) {                             
                             $('body').html(data);
                         } else {
-                            showError();                            
+                            start_showError();                            
                         }
                     })
                     .fail(function( jqXHR, textStatus, errorThrown ) {
-                        showError();
+                        start_showError();
                     });
                 }
             }
             
             $(document).ready(function(){                
-                start();
+                start_init();
             });
             
             

@@ -4,22 +4,10 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "ru.maxxam.msk"
-        version   = "1.0.1">
+        version   = "1.1.0">
     
-    <preference name='phonegap-version' value='3.7.0' />
-    <!--<preference name='phonegap-version' value='cli-5.2.0' />-->
-    
-    <!-- версияя для этого пакета 1 19 (версия андройд 19 (4.4 KitKat)) 00 (размер экрана) 100 (версия приложения 1.0.0)-->
-    <!--<preference name="android-versionCode" value="11900100" />--> 
+    <preference name='phonegap-version' value='cli-5.2.0' />
     <preference name="android-minSdkVersion" value="14" />
-    <!--<preference name="android-targetSdkVersion" value="21" />--> 
-    
-    <!-- версия для старых платформ - версия андройд 10 (2.2 Froyo) --> 
-    <!-- 
-    <preference name="android-versionCode" value="11300100" /> 
-    <preference name="android-minSdkVersion" value="13" />
-    <preference name="android-maxSdkVersion" value="18" />
-     -->
 
     <name>Московский</name>
 
@@ -82,8 +70,8 @@
     <!--<access origin="mailto:*" launch-external="yes" />-->
     
     <!--<gap:plugin name='org.crosswalk.engine' version='1.3.0' source='pgb' />-->
-    <gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
-    <!--<gap:plugin name="org.li8.inappbrowser" version="0.1" />-->
+    <!--<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />-->
+    <gap:plugin name="cordova-plugin-inappbrowser " version="1.0.1" />    
     <!--<gap:plugin name="br.com.paveisitemas.splashscreen" version="2.1.1" />-->
     
     <!-- заставка -->
@@ -92,4 +80,9 @@
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="SplashMaintainAspectRatio" value="false" />
     -->
+    
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <allow-navigation href="*"/>
+    <allow-intent href="*"/>
+    <access origin="*"/>
 </widget>
