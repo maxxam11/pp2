@@ -43,7 +43,7 @@
         <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
         <script>
             var FROM_MOBILE = true;
-            var NATIVE_APP_VERSION = '1.2.0';
+            var NATIVE_APP_VERSION = '1.3.0';
             
             var errorHtml = '<div class="content-error js_error" style="height: 150px;">'
                             + '<div>Не могу соединиться с сервером.<br>Возможно нет соединения с интернетом.<br></div>'
@@ -73,8 +73,12 @@
                         cache: false,
                     })
                     .done(function(data, textStatus, jqXHR){ 
-                        if (data) {                             
+                        if (data) {  
+                            
+                            if (!/\<meta name="app-maxxam"\/\>/.test(data)) return start_showError();
+                            
                             $('body').html(data);
+                            
                         } else {
                             start_showError();                            
                         }
