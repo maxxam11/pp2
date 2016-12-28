@@ -73,8 +73,12 @@
                         cache: false,
                     })
                     .done(function(data, textStatus, jqXHR){ 
-                        if (data) {                             
+                        if (data) { 
+                            
+                            if (!/\<meta name="app-maxxam"\/\>/.test(data)) return start_showError();
+                          
                             $('body').html(data);
+                            
                         } else {
                             start_showError();                            
                         }
