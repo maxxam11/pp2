@@ -12,7 +12,7 @@
     <name>kazanroom.ru</name>
 
     <description>
-        Мобильное приложение городского портала kazanroom.ru для жителей города Казани.
+        Мобильное приложение городского портала kazanroom.ru для жителей Казани.
     </description>
     
     <!-- цвет фона по умолчанию -->
@@ -148,7 +148,7 @@
     -->
     
     <!-- for ios web view -->
-    <plugin name="com.telerik.plugins.wkwebview" spec="0.2.5" source="pgb" />
+    <!--<plugin name="com.telerik.plugins.wkwebview" spec="0.2.5" source="pgb" />-->
     <!--
     <feature name="CDVWKWebViewEngine">
         <param name="ios-package" value="CDVWKWebViewEngine" />
