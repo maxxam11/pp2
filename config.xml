@@ -9,7 +9,7 @@
     <preference name='phonegap-version' value='cli-5.2.0' />
     <preference name="android-minSdkVersion" value="14" />
 
-    <name>kazanroom.ru</name>
+    <name>Казань</name>
 
     <description>
         Мобильное приложение городского портала kazanroom.ru для жителей Казани.
