@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "ru.maxxam.kzn"
+        version   = "1.2.1">
+    
+    <preference name='phonegap-version' value='cli-5.2.0' />
+    <preference name="android-minSdkVersion" value="14" />
+
+    <name>Казань</name>
+
+    <description>
+        Мобильное приложение городского портала kazanroom.ru для жителей Казани.
+    </description>
+    
+    <!-- цвет фона по умолчанию -->
+    <preference name="BackgroundColor" value="0xffffffff"/>
+    <!-- чтобы верхние и нижние края не тянулись когда за них тянешь -->
+    <preference name="DisallowOverscroll" value="true"/>
+    
+    
+
+    <author href="http://www.holme.ru" email="karachev.m@gmail.com">
+        MaxxaM
+    </author>
+    
+    <!-- Убирает все разрешения кроме доступа в интернет -->
+    <preference name="permissions"                value="none"/>
+    
+    <!-- включает разрешения по отдельности     
+    <feature name="http://api.phonegap.com/1.0/battery"/>
+    <feature name="http://api.phonegap.com/1.0/camera"/>
+    <feature name="http://api.phonegap.com/1.0/contacts"/>
+    <feature name="http://api.phonegap.com/1.0/file"/>
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/media"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/notification"/>
+    -->
+    
+    <!-- Иконки перечисляем для разных устройств -->
+    <icon src="res/icon-512.png" />    
+    
+    <platform name="android">
+            <icon src="res/Icon-ldpi.png" density="ldpi" />
+            <icon src="res/Icon-mdpi.png" density="mdpi" />
+            <icon src="res/Icon-hdpi.png" density="hdpi" />
+            <icon src="res/Icon-xhdpi.png" density="xhdpi" />
+            <icon src="res/Icon-xxhdpi.png" density="xxhdpi" />
+            <icon src="res/Icon-xxxhdpi.png" density="xxxhdpi" />
+    </platform>
+    
+    <platform name="ios">       
+        
+
+        <!-- iOS 8.0+ -->
+        <!-- iPhone 6 Plus  -->
+        <icon src="res/Icon-60@3x.png" width="180" height="180" />
+        <!-- iOS 7.0+ -->
+        <!-- iPhone / iPod Touch  -->        
+        <icon src="res/Icon-60.png" width="60" height="60" />
+        <icon src="res/Icon-60@2x.png" width="120" height="120" />        
+        <!-- iPad -->
+        <icon src="res/Icon-76.png" width="76" height="76" />
+        <icon src="res/Icon-76@2x.png" width="152" height="152" />
+        <!-- iOS 6.1 -->
+        <!-- Spotlight Icon -->
+        <!--
+        <icon src="res/ios/icon-40.png" width="40" height="40" />
+        <icon src="res/ios/icon-40@2x.png" width="80" height="80" /> 
+        -->       
+        <!-- iPhone / iPod Touch -->
+        <icon src="res/Icon-57.png" width="57" height="57" />
+        <icon src="res/Icon-57@2x.png" width="114" height="114" />
+        <!-- iPad -->
+        <icon src="res/Icon-72.png" width="72" height="72" />
+        <icon src="res/Icon-72@2x.png" width="144" height="144" />
+        <!-- iPhone Spotlight and Settings Icon -->
+        <!--
+        <icon src="res/ios/icon-small.png" width="29" height="29" />
+        <icon src="res/ios/icon-small@2x.png" width="58" height="58" />
+        -->
+        <!-- iPad Spotlight and Settings Icon -->
+        <!--
+        <icon src="res/ios/icon-50.png" width="50" height="50" />
+        <icon src="res/ios/icon-50@2x.png" width="100" height="100" />
+        -->
+        
+        
+        <!--
+        <splash src="res/screen/ios/Default~iphone.png" width="320" height="480"/>
+        <splash src="res/screen/ios/Default@2x~iphone.png" width="640" height="960"/>
+        <splash src="res/screen/ios/Default-Portrait~ipad.png" width="768" height="1024"/>
+        <splash src="res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
+        <splash src="res/screen/ios/Default-Landscape~ipad.png" width="1024" height="768"/>
+        <splash src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
+        
+        <splash src="res/ios/Default-568h@2x.png" width="640" height="1136"/>
+        -->
+        <!--
+        <splash src="res/screen/ios/Default-667h.png" width="750" height="1334"/>
+        <splash src="res/screen/ios/Default-736h.png" width="1242" height="2208"/>
+        <splash src="res/screen/ios/Default-Landscape-736h.png" width="2208" height="1242"/>
+        -->  
+
+        <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+    
+    </platform>
+    
+    <!--
+    <icon src="res/windows-phone/icon-48.png"  gap:platform="winphone" />
+    <icon src="res/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
+    -->
+
+    <!-- перечисляем заставки при загрузке -->
+    <!--
+    <gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
+    <gap:splash src="res/screen/android/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
+    <gap:splash src="res/screen/android/screen-hdpi-portrait.png"       gap:platform="android" gap:qualifier="port-hdpi" />
+    <gap:splash src="res/screen/android/screen-xhdpi-portrait.png"      gap:platform="android" gap:qualifier="port-xhdpi" />
+    <gap:splash src="res/screen/android/screen-ldpi-landscape.png"       gap:platform="android" gap:qualifier="land-ldpi" />
+    <gap:splash src="res/screen/android/screen-mdpi-landscape.png"       gap:platform="android" gap:qualifier="land-mdpi" />
+    <gap:splash src="res/screen/android/screen-hdpi-landscape.png"       gap:platform="android" gap:qualifier="land-hdpi" />
+    <gap:splash src="res/screen/android/screen-xhdpi-landscape.png"      gap:platform="android" gap:qualifier="land-xhdpi" />
+    -->
+    
+    <!--<content src="http://pp.holme.ru" />-->
+    <content src="index.html" />
+    
+    <!-- чтобы можно было номер набирать для звонка -->
+    <!--<access origin="tel:*" launch-external="yes" />-->    
+    <!-- чтобы можно было письмо отправить -->
+    <!--<access origin="mailto:*" launch-external="yes" />-->
+    
+    <!--<gap:plugin name='org.crosswalk.engine' version='1.3.0' source='pgb' />-->
+    <!-- https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin -->
+    <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
+    <!--<gap:plugin name="cordova-plugin-inappbrowser " version="1.0.1" />  -->  
+    <!--<gap:plugin name="br.com.paveisitemas.splashscreen" version="2.1.1" />-->
+    
+    <!-- заставка -->
+    <!--
+    <preference name="SplashScreen" value="space/img/splashscreen.png" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="SplashMaintainAspectRatio" value="false" />
+    -->
+    
+    <!-- for ios web view -->
+    <!--<plugin name="com.telerik.plugins.wkwebview" spec="0.2.5" source="pgb" />-->
+    <!--
+    <feature name="CDVWKWebViewEngine">
+        <param name="ios-package" value="CDVWKWebViewEngine" />
+    </feature>
+    -->
+    
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <allow-navigation href="*"/>
+    <allow-intent href="*"/>
+    <access origin="*"/>
+</widget>

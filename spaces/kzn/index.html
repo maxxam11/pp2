@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Казань</title>
+        
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=11" />
+        <!-- в мобиле включаем ширину сайта делаем шириной устройства -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <meta name="robots" content="all,follow" />
+        
+        <!-- включаем подсветку в мобильно хроме -->
+        <!-- Chrome, Firefox OS and Opera -->
+        <meta name="theme-color" content="#4CAF50">
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#4CAF50">
+        <!-- iOS Safari -->
+        <!--<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">-->
+
+        <!-- включаем режим мобильного прилождения, без навигационных панелей браузера в мобиле -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        
+        <meta http-equiv="Content-Security-Policy" content="default-src *; img-src * data:;  style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
+        
+        <style>
+            body, * { font-family: Arial, Helvetica, sans-serif; }
+            /*.content-error { font-size: 15px; display: none; padding: 100px 15px; color: grey; text-align: center; }*/
+            .content-error { 
+                font-size: 15px; 
+                color: grey; 
+                text-align: center; 
+                position: fixed; 
+                top: 0; left: 0; right: 0; bottom: 0;
+                margin: auto;
+            }
+            .content-error div { margin-bottom: 25px; }
+            .content-error_button { text-transform: uppercase; color: #4CAF50; }
+            .logo { text-transform: uppercase; color: #4CAF50; padding-top: 150px; text-align: center; }
+        </style>
+        
+        <script src="cordova.js" type="text/javascript"></script>
+        <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+        <script>
+            var FROM_MOBILE = true;
+            var NATIVE_APP_VERSION = '1.2.0';
+            
+            var errorHtml = '<div class="content-error js_error" style="height: 150px;">'
+                            + '<div>Не могу соединиться с сервером.<br>Возможно нет соединения с интернетом.<br></div>'
+                            + '<span class="content-error_button" onclick="start_init();">Попробовать еще раз</span>'
+                            + '</div>'; 
+                    
+            function start_showError() {
+                if (localStorage && localStorage['layout']) {
+                    try { 
+                        $('body').html(localStorage['layout']); 
+                    } catch(e) {  }
+                } 
+                var $content = $('#content').length ? $('#content') : $('body');
+                $content.html(errorHtml);
+            }
+            
+            function start_init() { 
+                
+                if (!navigator.onLine) { 
+                    start_showError();                     
+                } else { 
+                    $.ajax({
+                        url: 'http://kazanroom.ru/start?t34829a123b98d99c',
+                        method: 'get',
+                        dataType: 'html',
+                        timeout: 4000, 
+                        cache: false,
+                    })
+                    .done(function(data, textStatus, jqXHR){ 
+                        if (data) { 
+                            
+                            if (!/\<meta name="app-maxxam"\/\>/.test(data)) return start_showError();
+                          
+                            $('body').html(data);
+                            
+                        } else {
+                            start_showError();                            
+                        }
+                    })
+                    .fail(function( jqXHR, textStatus, errorThrown ) {
+                        start_showError();
+                    });
+                }
+            }
+            
+            $(document).ready(function(){                
+                start_init();
+            });
+            
+            
+        </script>
+    </head>
+    <body>
+        
+        <div class="content-error js_loading" style="height: 50px; font-size: 17px;">
+            <span class="content-error_button">Казань</span>
+        </div>        
+        
+    </body>
+</html>
