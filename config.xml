@@ -6,7 +6,7 @@
         id        = "ru.maxxam.kzn"
         version   = "1.2.1">
     
-    <preference name='phonegap-version' value='cli-5.2.0' />
+    <preference name='phonegap-version' value='cli-6.3.0' />
     <preference name="android-minSdkVersion" value="14" />
 
     <name>Казань</name>
@@ -54,7 +54,8 @@
     
     <platform name="ios">       
         
-
+        <icon src="res/icon-512.png" /> 
+        
         <!-- iOS 8.0+ -->
         <!-- iPhone 6 Plus  -->
         <icon src="res/Icon-60@3x.png" width="180" height="180" />
